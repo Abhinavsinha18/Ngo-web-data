@@ -2,6 +2,10 @@ const app = require('./app');
 // const Razorpay = require('razorpay');
 const connect = require('./db')
 const Petmodel = require('./models/Pets.model')
+ const cors = require('cors');
+
+
+ app.use(cors());
 
 // const instance = new Razorpay({
 //     key_id :  process.env.RAZORPAY_API_KEY ,
