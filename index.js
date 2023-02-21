@@ -1,12 +1,12 @@
 const app = require('./app');
-const Razorpay = require('razorpay');
+// const Razorpay = require('razorpay');
 const connect = require('./db')
 const Petmodel = require('./models/Pets.model')
 
-const instance = new Razorpay({
-    key_id :  process.env.RAZORPAY_API_KEY ,
-    key_secret : process.env.RAZORPAY_API_SECRET
-})
+// const instance = new Razorpay({
+//     key_id :  process.env.RAZORPAY_API_KEY ,
+//     key_secret : process.env.RAZORPAY_API_SECRET
+// })
 
 
 app.get('/',async (req,res)=>{
@@ -199,7 +199,7 @@ app.get('/',async (req,res)=>{
 })
 
 
-app.listen(process.env.PORT,async()=>{
+app.listen(5000,async()=>{
 try {
     await connect;
     console.log("Connected");
@@ -207,7 +207,7 @@ try {
     console.log(error);
 }
 
-    console.log("server is listining " + process.env.PORT);
+    console.log("server is listining " );
 })
 
-module.exports = instance;
+// module.exports = instance;
