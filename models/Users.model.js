@@ -4,8 +4,22 @@ let userSchema = mongoose.Schema({
     "email" :String,
     "name" : String,
     "age" : Number,
-    "password" : String 
-})
+    "isAdmin" :{
+        type:Boolean,
+        default :false
+    },
+    "profilePicture"  :String,
+    "coverPicture"  :String,
+    "about"  :String,
+    "livesin"  :String,
+    "workAt"  :String,
+    "relationship"  :String,
+    "password" : String, 
+    "followers" : [],
+    "following" : [],
+},
+{timestamps : true}
+)
 
 
 const Usermodel = mongoose.model('users',userSchema)

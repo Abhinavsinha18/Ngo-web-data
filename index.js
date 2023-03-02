@@ -5,8 +5,10 @@ const connect = require('./db')
  const cors = require('cors');
 
  const jwt = require('jsonwebtoken');
+ const userRoute = require('./Route/User.route')
  const router = require('./Route/Router')
 const bodyParser = require('body-parser');
+const Postrouter = require('./Route/post.route');
  const app = express();
 
  app.use(cors());
@@ -16,6 +18,10 @@ const bodyParser = require('body-parser');
 
 
  app.use('/',router);
+ app.use('/user',userRoute);
+ app.use('/post',Postrouter);
+
+ 
 
  
 
