@@ -14,7 +14,7 @@ Postrouter.post('/create',async(req,res)=>{
     }
 })
 
-Postrouter.post('/',async(req,res)=>{
+Postrouter.get('/',async(req,res)=>{
     try  {
     const newPost =await Postmodel.find()
        
