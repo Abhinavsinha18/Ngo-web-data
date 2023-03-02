@@ -14,6 +14,15 @@ Postrouter.post('/create',async(req,res)=>{
     }
 })
 
+Postrouter.post('/',async(req,res)=>{
+    try  {
+    const newPost =await Postmodel.find()
+       
+        res.send(JSON.stringify(newPost))
+    } catch (error) {
+        res.send(error);
+    }
+})
 
 Postrouter.get('/:id',async(req,res)=>{
 const id  = req.params.id;

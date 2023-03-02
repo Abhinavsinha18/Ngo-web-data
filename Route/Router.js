@@ -24,7 +24,7 @@ router.post('/login' , async (req,res)=>{
      }
 })
 
-router.get('/signup',async (req,res)=>{
+router.get('/user',async (req,res)=>{
     let  data = await Usermodel.find();
     res.send(JSON.stringify(data));
 })
