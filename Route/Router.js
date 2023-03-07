@@ -1,6 +1,7 @@
 const express = require('express');
 const Petmodel = require('../models/Pets.model')
 const Usermodel = require('../models/Users.model')
+// const jwt = requie('')
 
 const router = express.Router();
 
@@ -8,11 +9,11 @@ const router = express.Router();
 
 router.post('/login' , async (req,res)=>{
     let {email,password} = req.body;
-     try {
+     try{
        let data= await Usermodel.find({email:email,password:password});
-       const token = jwt.sign({course : 'backend'}, 'masai');
+    //    const token = jwt.sign({course : 'backend'}, 'masai');
   if(data.length>0){
-    res.send('Login success' + token)
+    res.send('Login success')
 }else{
     res.send("email or password wrong");
     
@@ -33,6 +34,7 @@ router.post('/signup',async (req,res)=>{
     let payload = req.body;
      console.log(payload);
     try{
+        
         const verify = await Usermodel.find({email: payload.email})
         if(verify.length==0){
             const data =  new Usermodel(payload);
